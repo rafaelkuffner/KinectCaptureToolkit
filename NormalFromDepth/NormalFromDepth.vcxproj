@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{392AB788-3621-47A1-9EEE-4C797BB2F8B0}</ProjectGuid>
+    <RootNamespace>NormalFromDepth</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>D:\Software\tinyxml2-master;D:\PCL\PCL 1.6.0\3rdParty\VTK\include\vtk-5.8;D:\Software\Flann\include;D:\PCL\PCL 1.8.0\include\pcl-1.8;D:\Software\eigen;D:\PCL\PCL 1.6.0\3rdParty\Boost\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Software\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll;D:/PCL/PCL 1.8.0/lib;D:/PCL/PCL 1.8.0/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;tinyxml2.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_chrono-vc100-mt-gd-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_system-vc100-mt-gd-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_filesystem-vc100-mt-gd-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_thread-vc100-mt-gd-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_date_time-vc100-mt-gd-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_iostreams-vc100-mt-gd-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkCommon-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkRendering-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkHybrid-gd.lib;D:\PCL\PCL 1.8.0\lib\pcl_common_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_kdtree_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_features_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_filters_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_search_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_surface_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_io_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_io_ply_debug.lib;D:\PCL\PCL 1.8.0\lib\pcl_visualization_debug.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkGraphics-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkverdict-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkImaging-gd.lib;D:\Qt\4.8.0\lib\QtGuid4.lib;D:\Qt\4.8.0\lib\QtSqld4.lib;D:\Qt\4.8.0\lib\QtCored4.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkIO-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkFiltering-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkDICOMParser-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkNetCDF_cxx-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkmetaio-gd.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtksys-gd.lib;ws2_32.lib;comctl32.lib;wsock32.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtksqlite.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkpng.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtktiff.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkzlib.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkjpeg.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkexpat.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkftgl.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkfreetype.lib;opengl32.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkexoIIc.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkNetCDF.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>D:\Software\tinyxml2-master;D:\PCL\PCL 1.6.0\3rdParty\VTK\include\vtk-5.8;D:\Software\Flann\include\;D:\PCL\PCL 1.8.0\include\pcl-1.8;D:\Software\eigen;D:\PCL\PCL 1.6.0\3rdParty\Boost\include;D:\Software\png++;D:\Software\zlib-1.2.8;D:\Software\GnuWin32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\Software\tinyxml2-master\tinyxml2\bin\Win32-Release-Dll;D:/PCL/PCL 1.8.0/lib;D:/PCL/PCL 1.8.0/lib/$(Configuration);D:\Software\GnuWin32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpng.lib;comdlg32.lib;advapi32.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_system-vc100-mt-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_chrono-vc100-mt-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_filesystem-vc100-mt-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_thread-vc100-mt-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_date_time-vc100-mt-1_49.lib;D:\PCL\PCL 1.6.0\3rdParty\Boost\lib\libboost_iostreams-vc100-mt-1_49.lib;D:\PCL\PCL 1.8.0\lib\pcl_common_release.lib;D:\PCL\PCL 1.8.0\lib\pcl_kdtree_release.lib;D:\PCL\PCL 1.8.0\lib\pcl_features_release.lib;D:\PCL\PCL 1.8.0\lib\pcl_search_release.lib;D:\PCL\PCL 1.8.0\lib\pcl_filters_release.lib;D:\PCL\PCL 1.8.0\lib\pcl_surface_release.lib;D:\PCL\PCL 1.8.0\lib\pcl_visualization_release.lib;D:\PCL\PCL 1.8.0\lib\pcl_io_release.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkGraphics.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkverdict.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkImaging.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkIO.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkFiltering.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkDICOMParser.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkNetCDF_cxx.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkmetaio.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtksys.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtksqlite.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkpng.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtktiff.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkzlib.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkjpeg.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkexpat.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkftgl.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkfreetype.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkexoIIc.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkNetCDF.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkCommon.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkRendering.lib;D:\PCL\PCL 1.6.0\3rdParty\VTK\lib\vtk-5.8\vtkHybrid.lib;D:\Qt\4.8.0\lib\QtGuid4.lib;D:\Qt\4.8.0\lib\QtSqld4.lib;D:\Qt\4.8.0\lib\QtCored4.lib;D:\Software\tinyxml2-master\tinyxml2\bin\Win32-Release-Dll\tinyxml2.lib;ws2_32.lib;comctl32.lib;wsock32.lib;vfw32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="normalFromDepth.cpp" />
+    <ClCompile Include="avatarReconstruction.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
