@@ -99,7 +99,7 @@ private:
 
 	udp::socket socket_;
 	udp::endpoint remote_endpoint_;
-	boost::array<char, 1048576> recv_buffer;
+	boost::array<char, 2048> recv_buffer;
 };
 
 
@@ -121,14 +121,14 @@ void writeThreadTask() {
 	while (rec)
 	{
 		auto t1 = std::chrono::high_resolution_clock::now();
-		if ( t1 - lastWrite> frequency) {
+		if (t1 - lastWrite> frequency) {
 			lastWrite = t1;
 			semaforo.lock();
 			file << receivedSkeleton << "\n";
 			file.flush();
 			semaforo.unlock();
 		}
-	
+
 	}
 }
 
@@ -163,7 +163,7 @@ bool dropped = false;
 
 
 void kinectThreadTask() {
-	std::cout << "ready to receive\n";
+	std::cout << "ready to receive" << endl;
 	boost::asio::io_service io_service;
 	udp_server server(io_service);
 	io_service.run();
@@ -303,6 +303,7 @@ void serverThreadTask()
 {
 	try
 	{
+		std::cout << "Server thread started" << endl;
 		boost::asio::io_service io_service;
 		tcp_server server(io_service);
 		io_service.run();
@@ -319,6 +320,7 @@ void serverThreadTask()
 
 int main(int argc, char* argv[]) {
 	loadConfig();
+	std::cout << "Config loaded" << endl;
 	boost::thread thread1(serverThreadTask);
 	boost::thread thread2(kinectThreadTask);
 	loadConfig();
